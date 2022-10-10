@@ -3,7 +3,11 @@
     "lite-server": "^2.6.1"
   },
   "scripts": {
-    "dev": "lite-server",
-    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "server": "lite-server",
+    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev": "concurrently \"npm run build-css\" \"npm run server\""
+  },
+  "dependencies": {
+    "concurrently": "^7.4.0"
   }
 }
